@@ -1,5 +1,5 @@
-## Assignment 1
-### Mohamed Hamza
+## Mohamed Hamza
+### Assignment 1
 
 * Week 1 items completed
 * Week 2 items completed
