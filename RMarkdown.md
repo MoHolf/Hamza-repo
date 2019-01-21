@@ -5,3 +5,4 @@
 * Week 2 items completed
 * R and RStudio installed
 * GitHub account and repository (name: Hamza-repo)
+* Repository URL: https://github.com/MoHolf/Hamza-repo
