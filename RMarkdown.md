@@ -1,5 +1,6 @@
 ## Mohamed Hamza
 ### Assignment 1
+### CS 567
 
 * Week 1 items completed
 * Week 2 items completed
