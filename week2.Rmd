@@ -27,8 +27,50 @@ s5
 ```
 
 
+```{r}
+##Q2)
+## The next two vectors represent the names of the wiu Basketball player and the minutes they played vs Omaha 70
+
+players <- c("Taylor", "Annabel" , "Olivia" , "Danni")
+minutes <- c(   33,       37,         31,       24)
+players
+minutes
+
+## The amount of points scored in each quarter by both teams 
+WIUPoints <- c (22,18,22,16)
+OmahaPoints <- c(16,16,8,30)
+
+print ("WIU Points:" ) 
+WIUPoints
+print ("Omaha Points:" ) 
+OmahaPoints
+
+##2nd Chance Points per quarter
+WIUCPoints <- c(5,5,0,0)
+OmahaCPoints <- c(0,2,1,6)
+
+WIUCPoints
+OmahaCPoints
+```
 
 
+```{r}
+##Q3)
+## Minutes played by all wiu players
+MPlayed <- c(33,37,31,24,15,23,17,8,12,NA,NA,NaN)
+MPlayed
+is.na(MPlayed)
+is.nan(MPlayed)
+## I tried this with an empty vector
+Empty <- c()
+Empty
+is.na(Empty)
+is.nan(Empty)
+##All WIU players are listed but the last name seems to be missing
+PNames <- c("Taylor", "Annabel", "Olivia", "Danni", "Grace", "Kyra", "Elizabeth", "Jinda", "Avery", "Payton", "Mackenzie", NA)
+is.na(PNames)
+is.nan(PNames)
+```
 
 
 
