@@ -7,12 +7,7 @@ output: html_document
 
 
 ```{r}
-mm <- seq.default(15,20)
-mm
-
-m <- matrix (11:16, nrow = 2, ncol = 3)
-m
-
+## Scores 
 
 ```
 
