@@ -7,8 +7,12 @@ output: html_document
 
 
 ```{r}
-s1 <- seq(2, 3, by=0.5)
-s1
+mm <- seq.default(15,20)
+mm
+
+m <- matrix (11:16, nrow = 2, ncol = 3)
+m
+
 
 ```
 
