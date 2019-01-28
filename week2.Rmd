@@ -71,6 +71,47 @@ PNames <- c("Taylor", "Annabel", "Olivia", "Danni", "Grace", "Kyra", "Elizabeth"
 is.na(PNames)
 is.nan(PNames)
 ```
+```{r}
+##Q4)
+##Minutes plyed by WIU players 
+WIUMPlayed <- c(33,37,31,24,15,23,17,8,12)
+WIUMPlayed
+##Chose player by index number:
+WIUMPlayed[1]
+WIUMPlayed[10]
+WIUMPlayed[5]
+##Show the minutes of the first 3 players:
+WIUMPlayed[1:3]
+##Show minutes of players who played more than 20 minutes
+WIUMPlayed[WIUMPlayed > 20]
+##Which players played more than 30 minutes? 
+MoreThan30 <- WIUMPlayed > 30
+MoreThan30
+##Print the minutes of players that played more than 30 minutes:
+WIUMPlayed[MoreThan30]
+```
+```{r}
+##Q5)
+##Some players and their minutes
+players <- c("Taylor", "Annabel" , "Olivia" , "Danni")
+minutes <- c(   33,       37,         31,       24)
+##Creating a matrix 
+playerMin <- 1:8
+##set the dimentions 
+dim (playerMin) <- c (2,4)
+##populate the matrix with using the two vectors 
+playerMin <-rbind(players, minutes)
+playerMin
+##show attributes of matrix
+attributes(playerMin)
+##Data Frame
+rebounds  <- c(   7,       3,         6,       5)
+PMDataFrame <- data.frame (players, minutes, rebounds)
+PMDataFrame
+
+
+
+```
 
 
 
