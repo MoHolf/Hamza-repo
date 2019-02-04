@@ -1,0 +1,103 @@
+---
+title: "Week3"
+author: "Mohamed Hamza"
+date: "February 3, 2019"
+output: html_document
+---
+
+```{r}
+##Q1)
+
+cereals <- read.csv(file="cereal.csv", header=TRUE, sep=";")
+cereals
+
+```
+
+```{r}
+##Q2)
+
+## creating two vectors
+calroies <- cereals[,4]
+protein <- cereals[,5]
+
+
+```
+
+```{r}
+##Q3)
+total <- 0
+count <- 0
+
+##using a for loop we calculate the total and the count
+for (i in seq_along(calroies)){
+  
+  total <- total + calroies[i]
+  count <- count + 1
+  
+}
+
+##by dividing the number of calories by the number of cereals we calculate the mean
+mean <- total / count
+print ("number of cereals:" )
+count
+print ("total calroies:" )
+total
+print ("calories mean:" )
+mean
+```
+
+```{r}
+##Q4)
+##a function to get the total of the values in a given vector
+total <- 0
+count <- 0
+totalF <- function (x) {
+  for (i in seq_along(x)){
+    total <- total + x[i]
+  }
+  total
+}
+##a function total to get the count of values in a giving vector
+countF <- function (x) {
+  for (i in seq_along(x)){
+    count <- count + 1
+  }
+  count
+}
+
+##a function that calculates the mean of a vector
+getMean <- function(x){
+  
+  m <- totalF(x) / countF(x)
+}
+
+caloriesMean <- getMean(calroies)
+caloriesMean
+
+proteinMean <- getMean(protein)
+proteinMean
+
+```
+
+```{r}
+##Q5) 
+total <- 0
+count <- 0
+##Converts the vector to a list
+proteinList <- list(protein)
+proteinList
+
+##total of protein
+proteinTotal <- lapply(proteinList, totalF)
+proteinTotal
+
+##count of protein
+proteinCount <- lapply(proteinList, countF)
+proteinCount
+
+##mean of protein
+listMean <- lapply(proteinList, getMean)
+listMean
+
+```
+
