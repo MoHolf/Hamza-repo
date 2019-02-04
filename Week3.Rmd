@@ -19,7 +19,15 @@ cereals
 ## creating two vectors
 calroies <- cereals[,4]
 protein <- cereals[,5]
-
+name <- cereals[,1]
+mfr <- cereals[,2]
+type <- cereals[,3]
+sodium <-cereals[,6]
+fiber <- cereals[,7]
+carbo <- cereals[,8]
+## those two don't exist, I just wanted to see what will happen
+price <- cereals[,9]
+size <- cereals[,10]
 
 ```
 
