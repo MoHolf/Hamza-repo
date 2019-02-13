@@ -4,7 +4,9 @@ library("rvest")
 PLData <- read_html( "https://www.premierleague.com/matchweek/3285/table")
 
 
-html_table(html_nodes(PLData, "table")[[2]])
+PLTable <- data.frame(html_table(html_nodes(PLData, "table")[[2]]))
+
+PLTable
 
 ```
 
