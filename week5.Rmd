@@ -1,0 +1,37 @@
+```{r}
+
+library("rvest")
+library("lubridate")
+
+## A link to a table that shows all the presidents of the US with their dates of birth and death if they are dead
+Data <- read_html( "https://www.presidentsusa.net/birth.html")
+
+
+Presidents <- html_table(html_nodes(Data, "table")[[1]])
+
+## I calculated their age as if they were still alive today, or just their age if they are not dead
+
+currentDate = Sys.Date()
+
+## I added all the birth dates to a vector
+DOB <- as.vector(Presidents$'Birth Date')
+
+## and changed them to dates
+DOB <- as.Date(DOB, "%b%d,%Y")
+
+## new vector with the same size as DOB
+age <- as.numeric(DOB) 
+
+## I used a for loop to calculate the age of each president and stored it in the new vector
+for (i in seq_along(DOB)){
+  
+  age[i] <-age_calc(DOB[i], as.Date(currentDate), units ="years")
+
+}
+
+## and then I added the new vector to the table
+newTable <- cbind (Presidents, "Years Since Birth" = age)
+newTable
+
+```
+
