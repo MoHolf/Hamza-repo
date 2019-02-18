@@ -9,7 +9,7 @@ Data <- read_html( "https://www.presidentsusa.net/birth.html")
 
 Presidents <- html_table(html_nodes(Data, "table")[[1]])
 
-## I calculated their age as if they were still alive today, or just their age if they are not dead
+## I calculated their age as if they were still alive today, some are still alive.
 
 currentDate = Sys.Date()
 
