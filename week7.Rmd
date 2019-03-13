@@ -1,0 +1,25 @@
+```{r}
+library("rvest")
+library ("datasets")
+library("ggplot2")
+
+
+
+## 
+Data <- read_html( "https://www.premierleague.com/matchweek/3285/table")
+
+
+Presidents <- html_table(html_nodes(Data, "table")[[2]])
+Presidents
+
+x <- as.vector(Presidents$'Pts')
+y <- as.vector(Presidents$'GD')
+
+
+qplot (x, y, geom = c("point", "smooth"))
+
+##with(airquality, plot(Wind, Ozone))
+##model <- lm (Ozone ~ Wind, airquality)
+##abline (model, lwd = 2)
+```
+
