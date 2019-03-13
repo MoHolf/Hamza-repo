@@ -19,8 +19,8 @@ plot <- ggplot (PLTable, aes (Points, Goal_Difference))
 TString <- "EPL 2018-2019 \nGoal_Difference vs Points Plot "
 
 ##used points, added a smoother and changed the title and the theme of the plot 
-options <- plot + geom_point() + geom_smooth() + labs (title = TString) + theme_bw()
-options
+POptions <- plot + geom_point() + geom_smooth() + labs (title = TString) + theme_bw()
+POptions
 
 ```
 
