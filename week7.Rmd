@@ -1,25 +1,28 @@
 ```{r}
 library("rvest")
-library ("datasets")
 library("ggplot2")
 
-
-
-## 
+## Premium league table for the 2018-2019 season
 Data <- read_html( "https://www.premierleague.com/matchweek/3285/table")
 
 
-Presidents <- html_table(html_nodes(Data, "table")[[2]])
-Presidents
+PLTable <- html_table(html_nodes(Data, "table")[[2]])
 
-x <- as.vector(Presidents$'Pts')
-y <- as.vector(Presidents$'GD')
+##Changed the names of a few coulmns to make them easier to understand
+names(PLTable)[4]<-paste("Goal_Difference")
+names(PLTable)[5]<-paste("Points")
 
+##Used the two columns to create a plot
+plot <- ggplot (PLTable, aes (Points, Goal_Difference))
 
-qplot (x, y, geom = c("point", "smooth"))
+##Title String to use as title for the plot
+TString <- "EPL 2018-2019 \nGoal_Difference vs Points Plot "
 
-##with(airquality, plot(Wind, Ozone))
-##model <- lm (Ozone ~ Wind, airquality)
-##abline (model, lwd = 2)
+##used points, added a smoother and changed the title and the theme of the plot 
+options <- plot + geom_point() + geom_smooth() + labs (title = TString) + theme_bw()
+options
+
 ```
+
+
 
