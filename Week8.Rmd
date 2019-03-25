@@ -14,7 +14,10 @@ Goal_Difference<- as.vector(PLTable$GD)
 data<- data.frame(Positions , Goal_Difference)
 
 ##Create a K-means cluster with three centers
-##In this league there are usualy 6 teams that are figting for the top spot and 4 to 5 teams fighting to stay in the league, because the bottom 3 teams go down a divison, other teams are just in the middle and trying to get as much points as possible without aiming for anything specific. By choosing 3 centers we can see those groups all cluster together.
+##In this league there are usualy 6 teams that are figting for the top spot and 4 to 5 teams fighting to stay in the..
+##league, because the bottom 3 teams go down a divison, other teams are just in the middle and trying to get as.. 
+##much points as possible without aiming for anything specific. By choosing 3 centers we can see those groups.. 
+##all cluster together.
 KCluster <- kmeans(data, centers = 3)
 
 par (mar = rep(0.2, 4))
