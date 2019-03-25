@@ -1,0 +1,28 @@
+```{r}
+Data <- read_html( "https://www.premierleague.com/matchweek/3285/table")
+
+##I used the data of the current English Soccer league
+PLTable <- html_table(html_nodes(Data, "table")[[2]])
+
+
+##I changed the two columns that show the position of each team and their goal difference to vectors
+Positions <- as.vector(PLTable$Position)
+
+Goal_Difference<- as.vector(PLTable$GD)
+
+##Create the data frame
+data<- data.frame(Positions , Goal_Difference)
+
+##Create a K-means cluster with three centers
+##In this league there are usualy 6 teams that are figting for the top spot and 4 to 5 teams fighting to stay in the league, because the bottom 3 teams go down a divison, other teams are just in the middle and trying to get as much points as possible without aiming for anything specific. By choosing 3 centers we can see those groups all cluster together.
+KCluster <- kmeans(data, centers = 3)
+
+par (mar = rep(0.2, 4))
+
+##Plot the K-means cluster
+plot (Positions, Goal_Difference, col = KCluster$cluster, pch = 19, cex = 2)
+points(KCluster$centers, col = 1:3, pch = 3, cex = 3, lwd = 3)
+
+```
+```
+
