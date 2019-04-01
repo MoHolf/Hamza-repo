@@ -1,0 +1,64 @@
+```{r}
+library("rvest")
+
+Data <- read_html( "https://www.premierleague.com/matchweek/3285/table")
+
+##I used the data of the current English Soccer league
+PLTable <- html_table(html_nodes(Data, "table")[[2]])
+PLTable
+
+plot( x, y,
+      xlab = "GD",
+      ylab = "Points",
+      bg = "lightblue",
+      col = "black", cex = 2, pch = 21, frame = FALSE)
+
+abline (h = 0, lwd = 2)
+
+
+```
+
+
+```{r}
+library("rvest")
+
+##I want to predict the amount points a team can get using the goal difference of the team
+
+Data <- read_html( "https://www.premierleague.com/matchweek/3285/table")
+
+##I used the data of the current English Soccer league
+PLTable <- html_table(html_nodes(Data, "table")[[2]])
+
+
+
+##independent variable
+x <- PLTable$GD
+
+##dependent variable
+y <- PLTable$Pts
+
+n <- length (y)
+
+fit <- lm(y ~ x)
+
+e <- resid (fit)
+
+yhat <- predict (fit)
+
+
+##create the plot between x and e
+plot( x, e,
+      xlab = "GD",
+      ylab = "Points",
+      bg = "lightblue",
+      col = "black", cex = 2, pch = 21, frame = FALSE)
+
+
+##add the regression line
+abline (h = 0, lwd = 2)
+
+##add the red lines
+for (i in 1 : n)
+  lines (c(x[i], x[i]), c(e[i],0), col = "red", lwd = 2)
+```
+
