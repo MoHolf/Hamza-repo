@@ -7,13 +7,17 @@ Data <- read_html( "https://www.premierleague.com/matchweek/3285/table")
 PLTable <- html_table(html_nodes(Data, "table")[[2]])
 PLTable
 
+x <- PLTable$GD
+
+y <- PLTable$Pts
+
+##plot x and y
 plot( x, y,
-      xlab = "GD",
+      xlab = "Goal Difference",
       ylab = "Points",
       bg = "lightblue",
       col = "black", cex = 2, pch = 21, frame = FALSE)
 
-abline (h = 0, lwd = 2)
 
 
 ```
@@ -48,7 +52,7 @@ yhat <- predict (fit)
 
 ##create the plot between x and e
 plot( x, e,
-      xlab = "GD",
+      xlab = "Goal Difference",
       ylab = "Points",
       bg = "lightblue",
       col = "black", cex = 2, pch = 21, frame = FALSE)
